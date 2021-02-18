@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="telemas" uuid="767049B8533B40F8ADB86C3E55A47517" collation_locale="ja">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Product" uuid="D3FC03C446884AC28CE033CDDF5C90B8" id="1">
+		<field name="ID" uuid="93DBA7DF5B7A46B394A01083D0D31EA2" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="AD578B0ADED24B7490CEB6A509D82521" type="10" never_null="true" id="2"/>
+		<field name="code" uuid="A15780CB2E18459BAF5E15E8E57CD421" type="10" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="93DBA7DF5B7A46B394A01083D0D31EA2"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="3">
+				<color red="255" green="255" blue="255" alpha="255"/>
+				<coordinates left="6.37109375" top="0" width="86" height="104.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Trade" uuid="90AFE3BBAD80497DA1E9FE1DD7B67345" id="2">
+		<field name="ID" uuid="8B13EB1E8EF54DA79CA630CA36995D50" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="date" uuid="5E0EF0C6F0F1427DBC41A070078FA480" type="8" never_null="true" id="2"/>
+		<field name="expense" uuid="FD39BDD772C740BC87D3686A76EDC2BE" type="4" never_null="true" id="3"/>
+		<field name="income" uuid="75199619F6CB4E2EAD5895A1F4A6AF95" type="4" never_null="true" id="4"/>
+		<field name="product" uuid="4A53A65A926D435EB93F69CE86D7EE59" type="4" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="8B13EB1E8EF54DA79CA630CA36995D50"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="5">
+				<color red="214" green="239" blue="255" alpha="255"/>
+				<coordinates left="202.3359375" top="54.01171875" width="100" height="146.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="User" uuid="3596475DE44C4F689B4C086E09CFF392" id="3">
+		<field name="ID" uuid="DCB772C034B2475287921835E61614BD" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="4AFB9130EDF649A5BC057B238164CF75" type="10" never_null="true" id="2"/>
+		<field name="password" uuid="534842DCA0B84F788688EC88E7A7193F" type="10" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="DCB772C034B2475287921835E61614BD"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="3">
+				<color red="255" green="240" blue="240" alpha="255"/>
+				<coordinates left="427.56640625" top="63.1484375" width="106" height="104.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="792783BD20914577A71C68A1069F3105" name_Nto1="product" name_1toN="trades" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="4A53A65A926D435EB93F69CE86D7EE59" name="product">
+				<table_ref uuid="90AFE3BBAD80497DA1E9FE1DD7B67345" name="Trade"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="93DBA7DF5B7A46B394A01083D0D31EA2" name="ID">
+				<table_ref uuid="D3FC03C446884AC28CE033CDDF5C90B8" name="Product"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" unique_keys="true" uuid="7BAE03A6102545139B96CE6C4F6AC466" type="7">
+		<field_ref uuid="8B13EB1E8EF54DA79CA630CA36995D50" name="ID">
+			<table_ref uuid="90AFE3BBAD80497DA1E9FE1DD7B67345" name="Trade"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="7F412CBC5FA14CECB384E6EB0AC87C7B" type="7">
+		<field_ref uuid="DCB772C034B2475287921835E61614BD" name="ID">
+			<table_ref uuid="3596475DE44C4F689B4C086E09CFF392" name="User"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="CB210C8FE9D54A298A052484CC4660F3" type="7">
+		<field_ref uuid="93DBA7DF5B7A46B394A01083D0D31EA2" name="ID">
+			<table_ref uuid="D3FC03C446884AC28CE033CDDF5C90B8" name="Product"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:63.1.0, alternate=search" __keywordBuildingHash="mecab:0.996;sys.dic:102;">
+		<journal_file journal_file_enabled="true"/>
+	</base_extra>
+</base>

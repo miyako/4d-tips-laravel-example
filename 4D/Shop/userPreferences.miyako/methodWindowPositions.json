@@ -1,0 +1,74 @@
+﻿{
+	"Sources/DatabaseMethods/onRESTAuthentication.4dm": {
+		"left": 543,
+		"top": 388,
+		"width": 837,
+		"height": 662
+	},
+	"Sources/Classes/Product.4dm": {
+		"left": 197,
+		"top": 342,
+		"width": 1333,
+		"height": 731
+	},
+	"Sources/Classes/ProductEntity.4dm": {
+		"left": 877,
+		"top": 190,
+		"width": 803,
+		"height": 809
+	},
+	"Sources/Methods/create_test_data.4dm": {
+		"left": 314,
+		"top": 381,
+		"width": 911,
+		"height": 731
+	},
+	"Sources/Classes/DataStore.4dm": {
+		"left": 197,
+		"top": 342,
+		"width": 1333,
+		"height": 731
+	},
+	"Sources/Methods/test_url_1.4dm": {
+		"left": 838,
+		"top": 183,
+		"width": 1069,
+		"height": 857
+	},
+	"Sources/Methods/create_test_related_data.4dm": {
+		"left": 224,
+		"top": 443,
+		"width": 1065,
+		"height": 731
+	},
+	"Sources/Methods/test_function_1.4dm": {
+		"left": 838,
+		"top": 157,
+		"width": 1069,
+		"height": 883
+	},
+	"Sources/Methods/test_url_2.4dm": {
+		"left": 294,
+		"top": 171,
+		"width": 1069,
+		"height": 857
+	},
+	"Trash/Classes/DataStore.4dm": {
+		"left": 197,
+		"top": 342,
+		"width": 1333,
+		"height": 731
+	},
+	"Sources/Classes/ProductSelection.4dm": {
+		"left": 197,
+		"top": 342,
+		"width": 1333,
+		"height": 731
+	},
+	"Sources/Methods/create_test_user.4dm": {
+		"left": 482,
+		"top": 190,
+		"width": 837,
+		"height": 662
+	}
+}
