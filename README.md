@@ -5,11 +5,7 @@ Laravel 8で4D v18 R5のREST APIをコールする例題
 
 [`Product` dataClass](4D/Shop/Project/Sources/Classes/Product.4dm)にはメンバー関数が定義されています。
 
-* getThisMonthProfit
-* getThisYearProfit
-
-
-* `getThisMonthProfit`は`query()`にフォーミュラを使用している点に注目
+* `getThisMonthProfit()`は`query()`にフォーミュラを使用している点に注目
 
 ```4d
 $formula:=Formula:C1597((Year of:C25(This:C1470.date)=Year of:C25($1.currentDate)) & (Month of:C24(This:C1470.date)=Month of:C24($1.currentDate)))
