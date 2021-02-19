@@ -69,5 +69,9 @@ composer require guzzlehttp/guzzle
 ```sh
 php artisan make:controller ShopController
 ```
+* ソースコードの編集
 
+ * [routes/web.php](4D/Shop/Resources/routes/web.php)
+ * [app/Http/Controllers/TelemasController.php](4D/Shop/Resources/app/Http/Controllers/ShopController.php)
+ * [resources/views/product/index.blade.php](4D/Shop/Resources/resources/views/product/index.blade.php)
 
