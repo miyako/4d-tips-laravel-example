@@ -135,8 +135,6 @@ public function login(Request $request)
         }
         
     }
-    
-    echo $status;
 
 }
 ```
