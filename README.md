@@ -32,5 +32,5 @@ $params.parameters:=New object:C1471("今年の元日"; Add to date:C393(!00-00-
 $trades:=This:C1470.all().trades.query(":日付 >= :今年の元日 and :日付 <= :今月の末日"; $params)
 ```
 
-**注記**: 18 R5では，``exposed``に設定されていないクラスメソッドはREST APIで公開されません。R4（クラスAPIが追加された最初のバージョン）では，すべてのクラスメソッドがREST APIで公開されました。
+**注記**: 18 R5では，``exposed``に設定されていないクラスメソッドはREST APIで公開されません。18 R4（クラスAPIが追加された最初のバージョン）では，すべてのクラスメソッドがREST APIで公開されました。
 
