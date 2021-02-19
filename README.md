@@ -45,3 +45,9 @@ RESTアクセスを認証するためには`$directory/login` APIにHTTPで`POST
 * [`HTTP Request`](4D/Shop/Project/Sources/Methods/test_url_2.4dm)でクラスのメンバーメソッドをコールする例題
 
 **注記**: 18 R5では，``exposed``に設定されていないクラスメソッドはREST APIで公開されません。18 R4（クラスAPIが追加された最初のバージョン）では，すべてのクラスメソッドがREST APIで公開されました。
+
+### Laravelのセットアップ
+
+**注記**: Larevelはすでにインストールされている前提です。
+
+
