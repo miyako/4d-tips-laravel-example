@@ -32,5 +32,7 @@ $params.parameters:=New object:C1471("今年の元日"; Add to date:C393(!00-00-
 $trades:=This:C1470.all().trades.query(":日付 >= :今年の元日 and :日付 <= :今月の末日"; $params)
 ```
 
+[`ProductEntity`](4D/Shop/Project/Sources/Classes/ProductEntity.4dm) [`ProductSelection`](4D/Shop/Project/Sources/Classes/ProductSelection.4dm)にも同名のメンバー関数（ポリモーフィズム）が定義されています。
+
 **注記**: 18 R5では，``exposed``に設定されていないクラスメソッドはREST APIで公開されません。18 R4（クラスAPIが追加された最初のバージョン）では，すべてのクラスメソッドがREST APIで公開されました。
 
