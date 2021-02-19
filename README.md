@@ -50,10 +50,24 @@ RESTアクセスを認証するためには`$directory/login` APIにHTTPで`POST
 
 **注記**: Larevelはすでにインストールされている前提です。
 
+* 新規プロジェクトの作成
+
 ```sh
 cd Laravel
 laravel new shop
 cd shop
+```
+
+* HTTPクライアントのインストール
+
+```sh
+composer require guzzlehttp/guzzle
+```
+
+* コントローラーの作成
+
+```sh
+php artisan make:controller ShopController
 ```
 
 
