@@ -38,8 +38,6 @@
                 }
                 
             }
-            
-            echo $status;
 
         }
         
