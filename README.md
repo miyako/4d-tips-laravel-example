@@ -181,3 +181,15 @@ public function index(Request $request)
 ### ビューについて
 
 ビューの時点では完全にLaravelアプリケーションとなります。
+
+* [http://localhost:8000/shop](http://localhost:8000/shop)
+
+全レコードを表示します（ログインしていなければ最初にログインします）。
+
+* [http://localhost:8000/login](http://localhost:8000/login)
+
+ログインします。
+
+* [http://localhost:8000/getThisMonthProfit](http://localhost:8000/getThisMonthProfit)
+
+4Dの同名REST APIをコールします。
