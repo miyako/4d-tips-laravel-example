@@ -90,7 +90,7 @@ php artisan serve --host=localhost --port=8000
 ### ルーティングについて
 
 ```php
-Route::resource('Shop', 'App\Http\Controllers\ShopController');
+Route::resource('shop', 'App\Http\Controllers\ShopController');
 Route::get('/login', 'App\Http\Controllers\ShopController@login');
 Route::get('/getThisMonthProfit', 'App\Http\Controllers\ShopController@getThisMonthProfit');
 ```
