@@ -75,3 +75,13 @@ php artisan make:controller ShopController
  * [app/Http/Controllers/TelemasController.php](4D/Shop/Resources/app/Http/Controllers/ShopController.php)
  * [resources/views/product/index.blade.php](4D/Shop/Resources/resources/views/product/index.blade.php)
 
+### ルーティングについて
+
+```php
+Route::resource('Shop', 'App\Http\Controllers\ShopController');
+Route::get('/login', 'App\Http\Controllers\ShopController@login');
+Route::get('/getThisMonthProfit', 'App\Http\Controllers\ShopController@getThisMonthProfit');
+```
+
+**注記**: Laravel 7以前のように[名前空間を省略するとエラー](https://litvinjuan.medium.com/how-to-fix-target-class-does-not-exist-in-laravel-8-f9e28b79f8b4)になります。
+
