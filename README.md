@@ -75,6 +75,12 @@ php artisan make:controller ShopController
  * [app/Http/Controllers/TelemasController.php](4D/Shop/Resources/app/Http/Controllers/ShopController.php)
  * [resources/views/product/index.blade.php](4D/Shop/Resources/resources/views/product/index.blade.php)
 
+* ルーティングの確認
+
+```sh
+php artisan route:list
+```
+
 ### ルーティングについて
 
 ```php
