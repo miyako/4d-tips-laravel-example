@@ -173,3 +173,7 @@ public function index(Request $request)
 
 }
 ```
+
+### ビューについて
+
+ビューの時点では完全にLaravelアプリケーションとなります。
