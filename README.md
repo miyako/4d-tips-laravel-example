@@ -50,4 +50,10 @@ RESTアクセスを認証するためには`$directory/login` APIにHTTPで`POST
 
 **注記**: Larevelはすでにインストールされている前提です。
 
+```sh
+Laravel
+laravel new shop
+cd shop
+```
+
 
