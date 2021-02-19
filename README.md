@@ -42,4 +42,4 @@ $trades:=This:C1470.all().trades.query(":日付 >= :今年の元日 and :日付 
 
 RESTアクセスを認証するためには`$directory/login` APIにHTTPで`POST`する必要があります。ブラウザのアドレスにURLを入力した場合は`GET`になるのでダメです。4Dの `HTTP Request`を使用するのであれば，`*`オプションを指定して`Keep-Alive`接続にすることができます。返された`Set-Cookie`ヘッダーからセッション識別子を取り出し，後続のアクセスで`Cookie`ヘッダーにセットすることができます。
 
-* (`HTTP Request`)[4D/Shop/Project/Sources/Methods/test_url_2.4dm]の例題
+* [`HTTP Request`](4D/Shop/Project/Sources/Methods/test_url_2.4dm)の例題
