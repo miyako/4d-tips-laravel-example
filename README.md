@@ -39,3 +39,7 @@ $trades:=This:C1470.all().trades.query(":日付 >= :今年の元日 and :日付 
 ### On REST Authentication
 
 前述したようにREST APIでは原則的にゲストユーザーが想定されていません。[`On REST Authentication`](4D/Shop/Project/Sources/DatabaseMethods/onRESTAuthentication.4dm)による認証は必須です。認証メソッドが実装されていない場合，すべてのリクエストは新規ゲストユーザーとなり，[たちまちクライアント接続ライセンスがを底を尽きます](https://4d-jp.github.io/2020/11/12/rest-api-license-model/)。
+
+RESTアクセスを認証するためには`$directory/login` APIにHTTPで`POST`する必要があります。ブラウザのアドレスにURLを入力した場合は`GET`になるのでダメです。4Dの `HTTP Request`を使用するのであれば，`*`オプションを指定して`Keep-Alive`接続にすることができます。返された`Set-Cookie`ヘッダーからセッション識別子を取り出し，後続のアクセスで`Cookie`ヘッダーにセットすることができます。
+
+* (`HTTP Request`)[4D/Shop/Project/Sources/Methods/test_url_2.4dm]の例題
