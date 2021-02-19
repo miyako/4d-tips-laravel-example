@@ -91,9 +91,53 @@ Route::get('/getThisMonthProfit', 'App\Http\Controllers\ShopController@getThisMo
 
 **注記**: Laravel 7以前のように[名前空間を省略するとエラー](https://litvinjuan.medium.com/how-to-fix-target-class-does-not-exist-in-laravel-8-f9e28b79f8b4)になります。
 
+### 認証について
+
+Laravelのコントローラーメソッドで4DのREST APIをコールします。セッション識別子は，[`$request`](https://laravel.com/docs/8.x/requests)に代入することができます。
+
+
+```php
+public function login(Request $request)
+{
+    $base_url = 'http://127.0.0.1:1800';
+    $client = new \GuzzleHttp\Client( [
+                                     'base_uri' => $base_url,
+                                     ] );
+    $path = '/rest/$directory/login';
+    $headers = [
+    'username-4D'           => 'user',
+    'session-4D-length'     => '60',
+    'hashed-password-4D'    => 'q1TzCU0hvFUZnyOPqPJ8Iw==',
+    'Connection'            => 'keep-alive'
+    ];
+    $response = $client->request( 'POST', $path,
+                                 [
+                                 'http_errors' => false,
+                                 'allow_redirects' => true,
+                                 'headers'         => $headers
+                                 ] );
+    
+    $status = (string) $response->getBody();
+    if (200 == $response->getStatusCode()) {
+        $cookies = $response->getHeader('Set-Cookie');
+        if(count($cookies) != 0) {
+            preg_match('/WASID4D=[^;]+/',$cookies[0],$match);
+            if(count($match) != 0) {
+                $request->session()->put('cookie', $match[0]);
+            }
+            
+        }
+        
+    }
+    
+    echo $status;
+
+}
+```
+
 ### Restfulリソースコントローラーについて
 
-LaravelのRestfulリソースコントローラーメソッド（たとえば`Controller@index`）で4DのREST APIをコールします。セッション識別子は，[`$request`](https://laravel.com/docs/8.x/requests)に代入することができます。
+LaravelのRestfulリソースコントローラーメソッド（たとえば`Controller@index`）で4DのREST APIをコールし，JSONをビューに渡すことができます。
 
 ```php
 public function index(Request $request)
