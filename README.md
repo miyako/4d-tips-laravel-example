@@ -3,9 +3,11 @@ Laravel 8で4D v18 R5のREST APIをコールする例題
 
 ### 4DをRESTサーバーにするには
 
-**REST API**: ORDAのリモートデータストア・4D for iOS・4D Mobile (Wakanda Bridge) の基盤となっているAPIです。**軽量クライアントアプリ**（モバイルなど）に向いています。Web Application Expansion (Web Server) ライセンスではなく，**4D Client Expansionライセンス**を消費します。ログインユーザー毎のセッション管理（18 R6以降はスケーラブルセッション管理）が組み込まれており，原則的にゲストユーザーは想定されていません。ORDAのクラスがそのままREST APIで公開されるので，個別にHTTPリクエストハンドラーを開発する必要はありません。
+**REST API**: ORDAのリモートデータストア・4D for iOS・4D Mobile (Wakanda Bridge) の基盤となっているAPIです。**軽量クライアントアプリ**（モバイルなど）の開発に向いています。Web Application Expansion (Web Server) ライセンスではなく，**4D Client Expansionライセンス**を消費します。ログインユーザー毎のセッション管理（18 R6以降はスケーラブルセッション管理）が組み込まれており，原則的にゲストユーザーは想定されていません。ORDAのクラスがそのままREST APIで公開されるので，個別にHTTPリクエストハンドラーを開発する必要はありません。
 
 **HTTP API**: **Web Application Expansion (Web Server) ライセンス**を消費する従来のメカニズム（``On Web Connection`` ``WEB SEND TEXT``など）の上に自作のREST APIを開発することができます。同時アクセスユーザー数にライセンス上の制限はありませんが，個別にHTTPリクエストハンドラーを開発する必要があり，膨大な作業量になるため，この方法でいわゆるリッチクライアント（4D ClientのWeb版）を実装することは想定されていません。
+
+この例題では前者を使用します。
 
 ### Class API
 
