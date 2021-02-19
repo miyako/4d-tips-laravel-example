@@ -34,7 +34,7 @@ $trades:=This:C1470.all().trades.query(":日付 >= :今年の元日 and :日付 
 
 [`ProductEntity`](4D/Shop/Project/Sources/Classes/ProductEntity.4dm) [`ProductSelection`](4D/Shop/Project/Sources/Classes/ProductSelection.4dm)にも同名のメンバー関数（ポリモーフィズム）が定義されています。
 
-**注記**: 18 R5では，``exposed``に設定されていないクラスメソッドはREST APIで公開されません。18 R4（クラスAPIが追加された最初のバージョン）では，すべてのクラスメソッドがREST APIで公開されました。
+* [`ORDA`](4D/Shop/Project/Sources/Methods/test_function_1.4dm)でクラスのメンバーメソッドをコールする例題
 
 ### On REST Authentication
 
@@ -42,4 +42,6 @@ $trades:=This:C1470.all().trades.query(":日付 >= :今年の元日 and :日付 
 
 RESTアクセスを認証するためには`$directory/login` APIにHTTPで`POST`する必要があります。ブラウザのアドレスにURLを入力した場合は`GET`になるのでダメです。4Dの `HTTP Request`を使用するのであれば，`*`オプションを指定して`Keep-Alive`接続にすることができます。返された`Set-Cookie`ヘッダーからセッション識別子を取り出し，後続のアクセスで`Cookie`ヘッダーにセットすることができます。
 
-* [`HTTP Request`](4D/Shop/Project/Sources/Methods/test_url_2.4dm)の例題
+* [`HTTP Request`](4D/Shop/Project/Sources/Methods/test_url_2.4dm)でクラスのメンバーメソッドをコールする例題
+
+**注記**: 18 R5では，``exposed``に設定されていないクラスメソッドはREST APIで公開されません。18 R4（クラスAPIが追加された最初のバージョン）では，すべてのクラスメソッドがREST APIで公開されました。
