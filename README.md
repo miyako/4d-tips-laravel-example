@@ -91,3 +91,41 @@ Route::get('/getThisMonthProfit', 'App\Http\Controllers\ShopController@getThisMo
 
 **注記**: Laravel 7以前のように[名前空間を省略するとエラー](https://litvinjuan.medium.com/how-to-fix-target-class-does-not-exist-in-laravel-8-f9e28b79f8b4)になります。
 
+### Restfulリソースコントローラーについて
+
+LaravelのRestfulリソースコントローラーメソッド（たとえば`Controller@index`）で4DのREST APIをコールします。セッション識別子は，[`$request`](https://laravel.com/docs/8.x/requests)に代入することができます。
+
+```php
+public function index(Request $request)
+{
+    if (!$request->session()->exists('cookie')) {
+        $this->login($request);
+    }
+                
+    if ($request->session()->exists('cookie')) {
+        
+        $base_url = 'http://127.0.0.1:1800';
+        $client = new \GuzzleHttp\Client( [
+                                         'base_uri' => $base_url,
+                                         ] );
+        $path = '/rest/Product';
+        $headers = [
+        'Cookie'            => session('cookie')
+        ];
+        $response = $client->request( 'GET', $path,
+                                     [
+                                     'http_errors' => false,
+                                     'allow_redirects' => true,
+                                     'headers'         => $headers
+                                     ] );
+        
+        if (200 == $response->getStatusCode()) {
+            $products = json_decode($response->getBody());
+            $products = $products->{"__ENTITIES"};
+            return view('product/index', compact('products'));
+        }
+
+    }
+
+}
+```
