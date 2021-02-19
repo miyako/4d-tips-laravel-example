@@ -182,6 +182,8 @@ public function index(Request $request)
 
 ビューの時点では完全にLaravelアプリケーションとなります。
 
+### テスト
+
 * [http://localhost:8000/shop](http://localhost:8000/shop)
 
 全レコードを表示します（ログインしていなければ最初にログインします）。
