@@ -192,4 +192,4 @@ public function index(Request $request)
 
 * [http://localhost:8000/getThisMonthProfit](http://localhost:8000/getThisMonthProfit)
 
-4Dの同名REST APIをコールします。
+4DのREST API`rest/Product/getThisMonthProfit`をコールします。
