@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Shop', 'App\Http\Controllers\ShopController');
+Route::resource('shop', 'App\Http\Controllers\ShopController');
 Route::get('/login', 'App\Http\Controllers\ShopController@login');
 Route::get('/getThisMonthProfit', 'App\Http\Controllers\ShopController@getThisMonthProfit');
