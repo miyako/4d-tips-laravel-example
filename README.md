@@ -38,4 +38,4 @@ $trades:=This:C1470.all().trades.query(":日付 >= :今年の元日 and :日付 
 
 ### On REST Authentication
 
-前述したようにREST APIでは原則的にゲストユーザーが想定されていません。[`On REST Authentication`](4D/Shop/Project/Sources/DatabaseMethods/onRESTAuthentication.4dm)による認証は必須です。認証メソッドが実装されていない場合，[すべてのリクエストは新規ゲストユーザーとなり，たちまちクライアント接続ライセンスがを底を尽きます](https://4d-jp.github.io/2020/11/12/rest-api-license-model/)。
+前述したようにREST APIでは原則的にゲストユーザーが想定されていません。[`On REST Authentication`](4D/Shop/Project/Sources/DatabaseMethods/onRESTAuthentication.4dm)による認証は必須です。認証メソッドが実装されていない場合，すべてのリクエストは新規ゲストユーザーとなり，[たちまちクライアント接続ライセンスがを底を尽きます](https://4d-jp.github.io/2020/11/12/rest-api-license-model/)。
