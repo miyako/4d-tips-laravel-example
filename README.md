@@ -81,6 +81,12 @@ php artisan make:controller ShopController
 php artisan route:list
 ```
 
+* サーバーの公開
+
+```sh
+php artisan serve --host=localhost --port=8000
+```
+
 ### ルーティングについて
 
 ```php
